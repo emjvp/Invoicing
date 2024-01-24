@@ -6,8 +6,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name="clientes")
-
-public class ClienteModel {
+public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
