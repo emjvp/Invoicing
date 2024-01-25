@@ -9,11 +9,13 @@ import java.util.Date;
 @Entity
 @Setter
 @Getter
+
 @Table(name = "ventas")
 public class Venta {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(name = "registrador")
     private String registradorVenta;

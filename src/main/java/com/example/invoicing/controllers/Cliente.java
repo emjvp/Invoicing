@@ -38,4 +38,11 @@ public class Cliente {
 
         return "Modificado";
     }
+
+    @DeleteMapping("baja/{id}")
+    public String delete(@PathVariable Long id){
+        com.example.invoicing.models.Cliente deleteCliente = clienteRepo.findById(id).get();
+        clienteRepo.delete(deleteCliente);
+        return "Eliminado";
+    }
 }
