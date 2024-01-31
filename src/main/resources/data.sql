@@ -21,7 +21,7 @@
 
 LOCK TABLES `clientes` WRITE;
 /*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
-INSERT INTO `clientes` VALUES (1,'Coder@house.com','Coder'),(2,'Coder2@house.com','Coder2');
+INSERT INTO `clientes` VALUES (1,'Coder@house.com','Coder',NULL,0),(2,'Coder2@house.com','Coder2',NULL,0),(4,'Coder3@house.com','Coder3','1998-04-21',0),(5,'Coder4@house.com','Coder4','1998-04-21',0),(6,'Coder5@house.com','Coder5','1998-04-22',0);
 /*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-24 23:53:33
+-- Dump completed on 2024-01-31 15:16:29

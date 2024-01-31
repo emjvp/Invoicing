@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
+
 @Entity
 @Table(name="clientes")
 public class Cliente {
@@ -23,4 +25,14 @@ public class Cliente {
     @Getter
     @Setter
     private String email;
+
+    @Column(name = "fecha_nacimiento")
+    @Getter
+    @Setter
+    private LocalDate fechaNacimiento;
+
+    @Getter
+    @Setter
+    private int edad;
+
 }
