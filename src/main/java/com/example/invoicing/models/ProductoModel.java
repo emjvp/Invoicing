@@ -4,20 +4,22 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
-
 @Entity
-@Setter
 @Getter
-
-@Table(name = "ventas")
-public class Venta {
+@Setter
+@Table(name="productos")
+public class ProductoModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "registrador")
-    private String registradorVenta;
+    private String nombre;
+
+    private String referencia;
+
+    @Column(name = "centro_costos")
+    private String centroDeCostos;
+
 
 }

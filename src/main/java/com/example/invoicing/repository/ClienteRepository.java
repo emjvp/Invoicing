@@ -1,15 +1,11 @@
 package com.example.invoicing.repository;
 
-import com.example.invoicing.models.Cliente;
+import com.example.invoicing.models.ClienteModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.Objects;
-
-public interface ClienteRepository extends JpaRepository<com.example.invoicing.models.Cliente, Long> {
+public interface ClienteRepository extends JpaRepository<ClienteModel, Long> {
 
     // Definí un método aquí en el repositorio del cliente
 

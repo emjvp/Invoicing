@@ -1,6 +1,7 @@
 package com.example.invoicing.controllers;
 
 
+import com.example.invoicing.models.ClienteModel;
 import com.example.invoicing.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -8,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public class Cliente {
+public class ClienteController {
 
     @Autowired
     private ClienteRepository clienteRepo;
@@ -19,21 +20,21 @@ public class Cliente {
     }
 
     @GetMapping("clientes")
-    public List<com.example.invoicing.models.Cliente> getClientes(){
+    public List<ClienteModel> getClientes(){
         return clienteRepo.findAll();
     }
 
     @PostMapping("alta")
-    public String post(@RequestBody com.example.invoicing.models.Cliente cliente){
-        clienteRepo.save(cliente);
+    public String post(@RequestBody ClienteModel clienteModel){
+        clienteRepo.save(clienteModel);
         return "Guardado";
     }
 
     @PutMapping("modificar/{id}")
-    public String update(@PathVariable Long id, @RequestBody com.example.invoicing.models.Cliente cliente){
-        com.example.invoicing.models.Cliente updateCliente = clienteRepo.findById(id).get();
-        updateCliente.setNombre(cliente.getNombre());
-        updateCliente.setEmail(cliente.getEmail());
+    public String update(@PathVariable Long id, @RequestBody ClienteModel clienteModel){
+        ClienteModel updateCliente = clienteRepo.findById(id).get();
+        updateCliente.setNombre(clienteModel.getNombre());
+        updateCliente.setEmail(clienteModel.getEmail());
         clienteRepo.save(updateCliente);
 
         return "Modificado";
@@ -41,7 +42,7 @@ public class Cliente {
 
     @DeleteMapping("baja/{id}")
     public String delete(@PathVariable Long id){
-        com.example.invoicing.models.Cliente deleteCliente = clienteRepo.findById(id).get();
+        ClienteModel deleteCliente = clienteRepo.findById(id).get();
         clienteRepo.delete(deleteCliente);
         return "Eliminado";
     }

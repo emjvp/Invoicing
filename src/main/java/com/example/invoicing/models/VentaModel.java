@@ -5,21 +5,17 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Getter
 @Setter
-@Table(name="productos")
-public class Producto {
+@Getter
+
+@Table(name = "ventas")
+public class VentaModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nombre;
-
-    private String referencia;
-
-    @Column(name = "centro_costos")
-    private String centroDeCostos;
-
+    @Column(name = "registrador")
+    private String registradorVenta;
 
 }
