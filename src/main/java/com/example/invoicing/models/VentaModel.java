@@ -18,4 +18,6 @@ public class VentaModel {
     @Column(name = "registrador")
     private String registradorVenta;
 
+
+
 }

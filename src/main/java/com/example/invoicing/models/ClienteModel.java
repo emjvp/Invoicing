@@ -31,6 +31,7 @@ public class ClienteModel {
     @Setter
     private LocalDate fechaNacimiento;
 
+    @Transient
     @Getter
     @Setter
     private int edad;
