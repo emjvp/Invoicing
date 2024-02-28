@@ -1,6 +1,6 @@
-package com.example.invoicing.controllers;
+package com.example.invoicing.controller;
 
-import com.example.invoicing.models.ClienteModel;
+import com.example.invoicing.model.ClienteModel;
 import com.example.invoicing.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,10 +26,12 @@ public class UtilsController {
             {
                 edad = "0";
             }
+
             clienteModel.setEdad(Integer.parseInt(edad));
 
         }
 
         return clienteModels;
     }
+
 }
