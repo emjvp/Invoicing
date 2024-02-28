@@ -45,7 +45,6 @@ public class ClienteService {
     public void deleteCliente(@PathVariable Long id){
         ClienteModel deleteCliente = clienteRepo.findById(id).get();
 
-        // clienteRepo.delete(deleteCliente);
         deleteCliente.setFechaEliminacion(LocalDate.now());
 
         clienteRepo.save(deleteCliente);

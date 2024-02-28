@@ -41,9 +41,12 @@ public class FacturaService {
         ProductoModel producto = productoRepository.findById(crearFacturaDTO.getProductoId())
                 .get();
 
+
         FacturaModel factura = new FacturaModel();
 
         factura.setCliente(cliente);
+
+        producto.setCantidadStock( producto.getCantidadStock() - 1 );
         factura.setProducto(producto);
 
         return facturaRepo.save(factura);
