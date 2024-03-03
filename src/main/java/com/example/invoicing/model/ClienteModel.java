@@ -50,19 +50,19 @@ public class ClienteModel {
     @Column(name = "fecha_creacion")
     @Getter
     @Setter
-    @Schema(description = "Fecha de creacion del cliente en la bd", requiredMode = Schema.RequiredMode.AUTO, example = "2024-02-28")
+    @Schema(description = "Fecha de creacion del cliente en la bd", requiredMode = Schema.RequiredMode.AUTO)
     private LocalDateTime fechaCreacion;
 
     @Column(name = "fecha_actualizacion")
     @Getter
     @Setter
-    @Schema(description = "Fecha de actualización del cliente en la bd", requiredMode = Schema.RequiredMode.AUTO, example = "2024-02-28")
+    @Schema(description = "Fecha de actualización del cliente en la bd", requiredMode = Schema.RequiredMode.AUTO)
     private LocalDateTime fechaActualizacion;
 
     @Column(name = "fecha_eliminacion")
     @Getter
     @Setter
-    @Schema(description = "Fecha de eliminación del cliente en la bd", requiredMode = Schema.RequiredMode.AUTO, example = "2024-02-28")
+    @Schema(description = "Fecha de eliminación del cliente en la bd", requiredMode = Schema.RequiredMode.AUTO)
     private LocalDateTime fechaEliminacion;
 
     @JsonIgnore

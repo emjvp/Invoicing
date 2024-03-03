@@ -38,15 +38,15 @@ public class ProductoModel {
     @Column(name = "precio_unitario", nullable = false)
     private double precioUnitario;
 
-    @Schema(description = "Fecha de creacion de la factura en la bd", requiredMode = Schema.RequiredMode.AUTO, example = "2024-02-28")
+    @Schema(description = "Fecha de creación del producto en la bd", requiredMode = Schema.RequiredMode.AUTO)
     @Column(name = "fecha_creacion")
     private LocalDateTime fechaCreacion;
 
-    @Schema(description = "Fecha de creacion de la factura en la bd", requiredMode = Schema.RequiredMode.AUTO, example = "2024-02-28")
+    @Schema(description = "Fecha de actualización del prducto en la bd", requiredMode = Schema.RequiredMode.AUTO)
     @Column(name = "fecha_actualizacion")
     private LocalDateTime fechaActualizacion;
 
-    @Schema(description = "Fecha de creacion de la factura en la bd", requiredMode = Schema.RequiredMode.AUTO, example = "2024-02-28")
+    @Schema(description = "Fecha de eliminación del producto en la bd", requiredMode = Schema.RequiredMode.AUTO)
     @Column(name = "fecha_eliminacion")
     private LocalDateTime fechaEliminacion;
 

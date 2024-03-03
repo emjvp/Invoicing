@@ -21,15 +21,15 @@ public class FacturaModel {
     @Schema(description = "id de factura autogestionado por la bd", requiredMode = Schema.RequiredMode.AUTO, example = "1")
     private Long id;
 
-    @Schema(description = "Fecha de creacion de la factura en la bd", requiredMode = Schema.RequiredMode.AUTO, example = "2024-02-28")
+    @Schema(description = "Fecha de creacion de la factura en la bd", requiredMode = Schema.RequiredMode.AUTO)
     @Column(name = "fecha_creacion")
     private LocalDateTime fechaCreacion;
 
-    @Schema(description = "Fecha de actualización de la factura en la bd", requiredMode = Schema.RequiredMode.AUTO, example = "2024-02-28")
+    @Schema(description = "Fecha de actualización de la factura en la bd", requiredMode = Schema.RequiredMode.AUTO)
     @Column(name = "fecha_actualizacion")
     private LocalDateTime fechaActualizacion;
 
-    @Schema(description = "Fecha de eliminación de la factura en la bd", requiredMode = Schema.RequiredMode.AUTO, example = "2024-02-28")
+    @Schema(description = "Fecha de eliminación de la factura en la bd", requiredMode = Schema.RequiredMode.AUTO)
     @Column(name = "fecha_eliminacion")
     private LocalDateTime fechaEliminacion;
 

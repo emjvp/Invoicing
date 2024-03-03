@@ -34,11 +34,14 @@ public class AsigRolesModel {
     private RolModel rol;
 
     @Column(name = "fecha_creacion")
+    @Schema(description = "Fecha de creacion de la asignación de roles en la bd", requiredMode = Schema.RequiredMode.AUTO)
     private LocalDateTime fechaCreacion;
 
     @Column(name = "fecha_actualizacion")
+    @Schema(description = "Fecha de la actualzación de la asignación de roles en la bd", requiredMode = Schema.RequiredMode.AUTO)
     private LocalDateTime fechaActualizacion;
 
     @Column(name = "fecha_eliminacion")
+    @Schema(description = "Fecha de la eliminación de la asignación de roles en la bd", requiredMode = Schema.RequiredMode.AUTO)
     private LocalDateTime fechaEliminacion;
 }

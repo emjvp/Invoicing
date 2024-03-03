@@ -33,12 +33,15 @@ public class UsuarioModel {
     private String contrasenia;
 
     @Column(name = "fecha_creacion")
+    @Schema(description = "Fecha de creación del usuario en la bd", requiredMode = Schema.RequiredMode.AUTO, example = "2024-02-28")
     private LocalDateTime fechaCreacion;
 
     @Column(name = "fecha_actualizacion")
+    @Schema(description = "Fecha de creación del usuario en la bd", requiredMode = Schema.RequiredMode.AUTO, example = "2024-02-28")
     private LocalDateTime fechaActualizacion;
 
     @Column(name = "fecha_eliminacion")
+    @Schema(description = "Fecha de eliminación del usuario en la bd", requiredMode = Schema.RequiredMode.AUTO, example = "2024-02-28")
     private LocalDateTime fechaEliminacion;
 
     @JsonIgnore
