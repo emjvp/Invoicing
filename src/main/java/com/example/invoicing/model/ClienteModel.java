@@ -9,6 +9,7 @@ import lombok.Setter;
 
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -28,7 +29,7 @@ public class ClienteModel {
     @Schema(description = "nombre del cliente", requiredMode = Schema.RequiredMode.REQUIRED, example = "Pepe Pérez")
     private String nombre;
 
-    @Column(name = "correo", nullable = false)
+    @Column(name = "correo_electronico", nullable = false)
     @Getter
     @Setter
     @Schema(description = "correo del cliente", requiredMode = Schema.RequiredMode.REQUIRED, example = "example@gmail.com")
@@ -50,22 +51,22 @@ public class ClienteModel {
     @Getter
     @Setter
     @Schema(description = "Fecha de creacion del cliente en la bd", requiredMode = Schema.RequiredMode.AUTO, example = "2024-02-28")
-    private LocalDate fechaCreacion;
+    private LocalDateTime fechaCreacion;
 
     @Column(name = "fecha_actualizacion")
     @Getter
     @Setter
     @Schema(description = "Fecha de actualización del cliente en la bd", requiredMode = Schema.RequiredMode.AUTO, example = "2024-02-28")
-    private LocalDate fechaActualizacion;
+    private LocalDateTime fechaActualizacion;
 
     @Column(name = "fecha_eliminacion")
     @Getter
     @Setter
     @Schema(description = "Fecha de eliminación del cliente en la bd", requiredMode = Schema.RequiredMode.AUTO, example = "2024-02-28")
-    private LocalDate fechaEliminacion;
+    private LocalDateTime fechaEliminacion;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "cliente")
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.PERSIST)
     private List<FacturaModel> facturas;
 
 }

@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -39,18 +40,18 @@ public class ProductoModel {
 
     @Schema(description = "Fecha de creacion de la factura en la bd", requiredMode = Schema.RequiredMode.AUTO, example = "2024-02-28")
     @Column(name = "fecha_creacion")
-    private LocalDate fechaCreacion;
+    private LocalDateTime fechaCreacion;
 
     @Schema(description = "Fecha de creacion de la factura en la bd", requiredMode = Schema.RequiredMode.AUTO, example = "2024-02-28")
     @Column(name = "fecha_actualizacion")
-    private LocalDate fechaActualizacion;
+    private LocalDateTime fechaActualizacion;
 
     @Schema(description = "Fecha de creacion de la factura en la bd", requiredMode = Schema.RequiredMode.AUTO, example = "2024-02-28")
     @Column(name = "fecha_eliminacion")
-    private LocalDate fechaEliminacion;
+    private LocalDateTime fechaEliminacion;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "producto")
+    @OneToMany(mappedBy = "producto", cascade = CascadeType.PERSIST)
     private List<FacturaModel> facturas;
 
 }

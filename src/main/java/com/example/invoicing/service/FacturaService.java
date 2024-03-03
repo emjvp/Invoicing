@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -48,6 +49,7 @@ public class FacturaService {
 
         producto.setCantidadStock( producto.getCantidadStock() - 1 );
         factura.setProducto(producto);
+        factura.setFechaCreacion(LocalDateTime.now());
 
         return facturaRepo.save(factura);
     }
@@ -63,6 +65,7 @@ public class FacturaService {
 
         facturaToUpdate.setCliente(cliente);
         facturaToUpdate.setProducto(producto);
+        facturaToUpdate.setFechaActualizacion(LocalDateTime.now());
 
         return facturaRepo.save(facturaToUpdate);
     }
@@ -71,7 +74,7 @@ public class FacturaService {
     public void deleteFactura(Long facturaId){
 
         FacturaModel facturaToDelete = facturaRepo.findById(facturaId).get();
-        facturaToDelete.setFechaEliminacion(LocalDate.now());
+        facturaToDelete.setFechaEliminacion(LocalDateTime.now());
         facturaRepo.save(facturaToDelete);
 
     }

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -28,6 +29,7 @@ public class ProductoService {
 
     @Transactional
     public ProductoModel create(ProductoModel productoModel){
+        productoModel.setFechaCreacion(LocalDateTime.now());
         return productoRepo.save(productoModel);
     }
 
@@ -39,7 +41,7 @@ public class ProductoService {
         productoToUpdt.setCantidadStock(productoReqModel.getCantidadStock());
         productoToUpdt.setReferencia(productoReqModel.getReferencia());
         productoToUpdt.setPrecioUnitario(productoReqModel.getPrecioUnitario());
-
+        productoToUpdt.setFechaActualizacion(LocalDateTime.now());
         return productoRepo.save(productoToUpdt);
 
     }
@@ -47,7 +49,7 @@ public class ProductoService {
     @Transactional
     public void delete(@PathVariable Long id){
         ProductoModel productoModelToDelete = productoRepo.findById(id).get();
-        productoModelToDelete.setFechaEliminacion(LocalDate.now());
+        productoModelToDelete.setFechaEliminacion(LocalDateTime.now());
         productoRepo.save(productoModelToDelete);
     }
 

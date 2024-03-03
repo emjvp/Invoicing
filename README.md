@@ -11,3 +11,6 @@ Instalar [Java 21](https://adoptium.net/temurin/releases/).
 ### Uso
 
 Correr el proyecto con maven(comando run).
+
+## Swager
+http://localhost:8080/swagger-ui/index.html
