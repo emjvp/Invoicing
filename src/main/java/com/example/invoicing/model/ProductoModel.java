@@ -30,13 +30,13 @@ public class ProductoModel {
     @Column(nullable = false)
     private String referencia;
 
-    @Schema(description = "cantidad del producto", requiredMode = Schema.RequiredMode.REQUIRED, example = "100")
-    @Column(name = "cantidad_stock", nullable = false)
-    private double cantidadStock;
+    @Schema(description = "Costo unitario del producto comprado sin el sobrecosto", requiredMode = Schema.RequiredMode.REQUIRED, example = "100")
+    @Column(name = "costo_unitario", nullable = false)
+    private double costoUnitario;
 
-    @Schema(description = "precio unitario del producto", requiredMode = Schema.RequiredMode.REQUIRED, example = "100000")
-    @Column(name = "precio_unitario", nullable = false)
-    private double precioUnitario;
+    @Schema(description = "Número de lote del producto", requiredMode = Schema.RequiredMode.REQUIRED, example = "100000")
+    @Column(name = "numero_lote", nullable = false)
+    private String numeroLote;
 
     @Schema(description = "Fecha de creación del producto en la bd", requiredMode = Schema.RequiredMode.AUTO)
     @Column(name = "fecha_creacion")

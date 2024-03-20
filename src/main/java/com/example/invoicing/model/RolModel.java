@@ -37,6 +37,6 @@ public class RolModel {
     private LocalDateTime fechaEliminacion;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "asig_usuarios", cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "rol", cascade = CascadeType.PERSIST)
     private List<AsigRolesModel> asignacionUsuarios;
 }

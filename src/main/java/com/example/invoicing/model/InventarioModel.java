@@ -1,7 +1,6 @@
 package com.example.invoicing.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,4 +9,11 @@ import lombok.Setter;
 @Setter
 @Table(name = "inventario")
 public class InventarioModel {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    // TODO: id producto y id_orden_compra
+
 }

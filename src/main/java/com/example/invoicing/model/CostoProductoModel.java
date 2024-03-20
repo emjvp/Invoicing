@@ -5,21 +5,20 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
 @Getter
 @Setter
-@Table(name = "precios")
-public class PrecioModel {
+@Table(name = "costos_productos")
+public class CostoProductoModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Schema(description = "id de los preios autogestionado por la bd", requiredMode = Schema.RequiredMode.AUTO, example = "1")
+    @Schema(description = "id de los costos autogestionado por la bd", requiredMode = Schema.RequiredMode.AUTO, example = "1")
     private Long id;
 
-    @Schema(description = "valor del precio", requiredMode = Schema.RequiredMode.REQUIRED, example = "10000")
+    @Schema(description = "valor del costo", requiredMode = Schema.RequiredMode.REQUIRED, example = "10000")
     private double valor;
 
     @Schema(description = "Fecha de inicio del precio", requiredMode = Schema.RequiredMode.AUTO)
